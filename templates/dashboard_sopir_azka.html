@@ -210,113 +210,11 @@ let scanType = null;
 const scannerBox = document.getElementById("scannerBox");
 const readerId = "reader";
 
-function showMessage(message, type="danger") {
+/* ================================
+   🔥 HARD RESET KAMERA – LEVEL DEWA
+================================= */
+async function hardResetCamera() {
 
-    const toastEl = document.getElementById("liveToast");
-    const toastMsg = document.getElementById("toastMessage");
-
-    toastMsg.innerText = message;
-
-    // reset class
-    toastEl.classList.remove("bg-success","bg-danger","bg-warning","bg-info");
-
-    if(type === "success"){
-        toastEl.classList.add("bg-success");
-    } else if(type === "warning"){
-        toastEl.classList.add("bg-warning");
-    } else {
-        toastEl.classList.add("bg-danger");
-    }
-
-    const toast = new bootstrap.Toast(toastEl);
-    toast.show();
-}
-
-async function startScan(type) {
-    if (isScanning) return;
-
-    scanType = type;
-    isScanning = true;
-
-    scannerBox.style.display = "block";
-    scannerBox.scrollIntoView({ behavior: "smooth" });
-
-    html5QrCode = new Html5Qrcode(readerId);
-
-    try {
-        const cameras = await Html5Qrcode.getCameras();
-        if (!cameras.length) {
-            showMessage("❌ Kamera tidak ditemukan");
-            await stopScan();
-            return;
-        }
-
-        // pilih kamera belakang jika ada
-        const backCamera = cameras.find(cam =>
-            cam.label.toLowerCase().includes("back")
-        ) || cameras[0];
-
-        await html5QrCode.start(
-            { deviceId: { exact: backCamera.id } },
-            {
-                fps: 10,
-                qrbox: { width: 250, height: 250 }
-            },
-            onScanSuccess
-        );
-
-    } catch (err) {
-        showMessage("❌ Tidak bisa mengakses kamera");
-        await stopScan();
-    }
-}
-async function onScanSuccess(decodedText) {
-    if (!isScanning) return;
-
-    isScanning = false;
-
-    const data = decodedText.split("|");
-
-    if (data[0] !== "GUDANG") {
-        showMessage("❌ QR bukan QR Gudang");
-        await stopScan();
-        return;
-    }
-
-    try {
-        const res = await fetch("/scan_sopir_azka", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: new URLSearchParams({
-                scan_type_azka: scanType,
-                warehouse_id_azka: data[1]
-            })
-        });
-
-        const resultText = await res.text();
-
-        if (!res.ok) {
-            showMessage(resultText, "danger");
-            await stopScan();
-            return;
-        }
-
-        showMessage(resultText || "✅ Scan berhasil", "success");
-
-        await stopScan();
-
-        setTimeout(() => {
-            location.reload();
-        }, 1200);
-
-    } catch (err) {
-        showMessage("❌ Terjadi kesalahan sistem");
-        await stopScan();
-    }
-}
-async function stopScan() {
     isScanning = false;
 
     if (html5QrCode) {
@@ -331,7 +229,157 @@ async function stopScan() {
         html5QrCode = null;
     }
 
+    // 🔥 Paksa hentikan semua media stream
+    try {
+        const streams = await navigator.mediaDevices.getUserMedia({ video: true });
+        streams.getTracks().forEach(track => track.stop());
+    } catch(e){}
+
+    // 🔥 Hapus semua elemen video dalam reader
+    const reader = document.getElementById(readerId);
+    reader.innerHTML = "";
+
+    // 🔥 Delay kecil supaya device benar-benar release
+    await new Promise(resolve => setTimeout(resolve, 400));
+
     scannerBox.style.display = "none";
+}
+
+/* ================================
+   🔥 START SCAN
+================================= */
+async function startScan(type) {
+
+    if (isScanning) return;
+
+    scanType = type;
+    isScanning = true;
+
+    scannerBox.style.display = "block";
+    scannerBox.scrollIntoView({ behavior: "smooth" });
+
+    html5QrCode = new Html5Qrcode(readerId);
+
+    try {
+
+        const cameras = await Html5Qrcode.getCameras();
+
+        if (!cameras.length) {
+            showMessage("❌ Kamera tidak ditemukan");
+            await hardResetCamera();
+            return;
+        }
+
+        // 🔥 Prioritaskan kamera belakang
+        const backCamera =
+            cameras.find(cam =>
+                cam.label.toLowerCase().includes("back") ||
+                cam.label.toLowerCase().includes("rear")
+            ) || cameras[0];
+
+        await html5QrCode.start(
+            { deviceId: { exact: backCamera.id } },
+            {
+                fps: 10,
+                qrbox: { width: 250, height: 250 },
+                aspectRatio: 1.0
+            },
+            onScanSuccess,
+            () => {}
+        );
+
+    } catch (err) {
+        showMessage("❌ Tidak bisa mengakses kamera");
+        await hardResetCamera();
+    }
+}
+
+/* ================================
+   🔥 SCAN SUCCESS
+================================= */
+async function onScanSuccess(decodedText) {
+
+    if (!isScanning) return;
+    isScanning = false;
+
+    const data = decodedText.split("|");
+
+    if (data[0] !== "GUDANG") {
+        showMessage("QR bukan QR Gudang");
+        await hardResetCamera();
+        return;
+    }
+
+    try {
+
+        const res = await fetch("/scan_sopir_azka", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: new URLSearchParams({
+                scan_type_azka: scanType,
+                warehouse_id_azka: data[1]
+            })
+        });
+
+        const resultText = await res.text();
+
+        /* ===========================
+           🔒 HANDLE AUTH BACKEND
+        ============================ */
+
+        if (res.status === 401) {
+            showMessage("Session habis. Silakan login ulang.");
+            await hardResetCamera();
+            setTimeout(() => {
+                window.location.href = "/login_azka";
+            }, 1500);
+            return;
+        }
+
+        if (res.status === 403) {
+            showMessage("Akses ditolak.");
+            await hardResetCamera();
+            return;
+        }
+
+        /* ===========================
+           ❌ VALIDASI ERROR (400)
+        ============================ */
+
+        if (!res.ok) {
+            showMessage(resultText || "Scan gagal");
+            await hardResetCamera();
+            return;
+        }
+
+        /* ===========================
+           ✅ SUCCESS
+        ============================ */
+
+        if (navigator.vibrate) navigator.vibrate(200);
+
+        showMessage(resultText || "Scan berhasil", "success");
+
+        await hardResetCamera();
+
+        // 🔥 Reload agar status shipment update sesuai backend
+        setTimeout(() => {
+            location.reload();
+        }, 1500);
+
+    } catch (err) {
+
+        showMessage("Terjadi kesalahan sistem");
+        await hardResetCamera();
+    }
+}
+/* ================================
+   🔥 STOP BUTTON
+================================= */
+async function stopScan() {
+    await hardResetCamera();
 }
 </script>
 

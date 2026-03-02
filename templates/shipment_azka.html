@@ -850,7 +850,7 @@
                     )'>
                     <i class="bi bi-geo-alt-fill"></i> Tracking
                 </button>
-                {% if s.status_azka not in['DELIVERED','READY_FOR_DELIVERY','PICKUP','ARRIVED_AT_HUB','SORTING'] %}
+                {% if s.status_azka not in['DELIVERED','READY_FOR_DELIVERY','PICKUP','ARRIVED_AT_HUB','SORTING','TRANSIT_HUB'] %}
 
                     {% if not s.driver_id_azka %}
                     <button

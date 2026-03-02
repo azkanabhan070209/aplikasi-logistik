@@ -799,6 +799,8 @@
                             bg-warning text-dark
                         {% elif s.status_azka == 'ARRIVED_AT_HUB' %}
                             bg-info text-dark
+                        {% elif s.status_azka == 'TRANSIT_HUB' %}
+                            bg-warning text-dark
                         {% elif s.status_azka == 'READY_FOR_DELIVERY' %}
                             bg-dark
                         {% else %}

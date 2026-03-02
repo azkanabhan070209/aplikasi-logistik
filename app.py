@@ -1,1405 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 from flask import Flask, render_template, request, redirect, session,jsonify, flash, url_for,current_app
 from werkzeug.security import generate_password_hash, check_password_hash
 from io import BytesIO
@@ -2075,7 +674,18 @@ def admin_users_add_azka():
         email_azka = request.form['email_azka']
         password_hash_azka = request.form['password_hash_azka']
         role_id_azka = request.form['role_id_azka']
-        wilayah_azka = request.form.get('wilayah_azka')
+        wilayah_azka = request.form.get('wilayah_azka', '').strip().upper()
+
+        # Normalisasi awalan wilayah
+        if wilayah_azka.startswith('KAB'):
+            wilayah_azka = wilayah_azka.replace('KAB.', '')
+            wilayah_azka = wilayah_azka.replace('KAB', '')
+            wilayah_azka = 'KABUPATEN ' + wilayah_azka.strip()
+
+        elif wilayah_azka.startswith('KOTA'):
+            wilayah_azka = wilayah_azka.replace('KOTA.', '')
+            wilayah_azka = wilayah_azka.replace('KOTA', '')
+            wilayah_azka = 'KOTA ' + wilayah_azka.strip()
 
         password_hash_azka = generate_password_hash(
             password_hash_azka,
@@ -2966,6 +1576,7 @@ def admin_scan_driver_assignment_azka():
     cursor = conn.cursor(dictionary=True)
 
     try:
+        conn.start_transaction()
 
         # ================= PARSE QR =================
         if "SOPIR|" in driver_qr:
@@ -2973,35 +1584,58 @@ def admin_scan_driver_assignment_azka():
         else:
             driver_id = driver_qr.strip()
 
-        # ================= CEK DRIVER =================
+        # ================= LOCK DRIVER =================
         cursor.execute("""
             SELECT id_azka, username_azka
             FROM tbl_users_azka
             WHERE id_azka = %s
             AND role_id_azka = 5
+            FOR UPDATE
         """, (driver_id,))
-
         driver = cursor.fetchone()
 
         if not driver:
+            conn.rollback()
             return jsonify({"message": "Driver tidak ditemukan"}), 404
 
-
-        # ================= CEK SHIPMENT =================
+        # ================= LOCK SHIPMENT =================
         cursor.execute("""
-            SELECT tracking_number_azka
+            SELECT id_azka, tracking_number_azka, status_azka, warehouse_id_azka
             FROM tbl_shipment_azka
             WHERE id_azka = %s
+            FOR UPDATE
         """, (shipment_id,))
-
         shipment = cursor.fetchone()
 
         if not shipment:
+            conn.rollback()
             return jsonify({"message": "Shipment tidak ditemukan"}), 404
 
+        if shipment['status_azka'] != 'CREATED':
+            conn.rollback()
+            return jsonify({
+                "message": "Shipment sudah diproses, tidak bisa assign driver"
+            }), 400
 
-        tracking_number = shipment['tracking_number_azka']
+        # ================= CEK DRIVER AKTIF =================
+        cursor.execute("""
+            SELECT s.warehouse_id_azka, w.nama_azka
+            FROM tbl_shipment_azka s
+            LEFT JOIN tbl_warehouses_azka w
+                ON s.warehouse_id_azka = w.id_azka
+            WHERE s.driver_id_azka = %s
+            AND s.status_azka NOT IN ('DELIVERED', 'CANCELLED')
+            LIMIT 1
+        """, (driver['id_azka'],))
+        active_shipment = cursor.fetchone()
 
+        # ================= VALIDASI GUDANG =================
+        if active_shipment:
+            if active_shipment['warehouse_id_azka'] != shipment['warehouse_id_azka']:
+                conn.rollback()
+                return jsonify({
+                    "message": f"Driver sedang aktif di gudang {active_shipment['nama_azka']}, tidak bisa assign ke gudang berbeda"
+                }), 400
 
         # ================= ASSIGN DRIVER =================
         cursor.execute("""
@@ -3011,10 +1645,7 @@ def admin_scan_driver_assignment_azka():
             WHERE id_azka = %s
         """, (driver['id_azka'], shipment_id))
 
-
         # ================= LOG =================
-        log_text = f"Paket {tracking_number} sudah ditugaskan kepada driver {driver['username_azka']}"
-
         cursor.execute("""
             INSERT INTO tbl_activity_logs_azka
             (user_id_azka, shipment_id_azka, actions_azka, created_at_azka)
@@ -3022,16 +1653,17 @@ def admin_scan_driver_assignment_azka():
         """, (
             session['user_id_azka'],
             shipment_id,
-            log_text
+            f"Driver {driver['username_azka']} assigned ke paket {shipment['tracking_number_azka']}"
         ))
 
         conn.commit()
 
         return jsonify({
-            "message": f"Driver {driver['username_azka']} ditugaskan"
+            "message": f"Driver {driver['username_azka']} berhasil ditugaskan"
         })
 
     except Exception as e:
+        conn.rollback()
         return jsonify({"message": str(e)}), 500
 
     finally:
@@ -3913,16 +2545,14 @@ def scan_sopir_azka():
             )
         """, (driver_id,))
 
-        assigned = cursor.fetchone()['total']
-
-        if assigned == 0:
+        if cursor.fetchone()['total'] == 0:
             raise Exception("Belum ada shipment ditugaskan oleh admin")
 
         # =============================
-        # VALIDASI POLA SCAN (IN → OUT → IN)
+        # VALIDASI POLA SCAN
         # =============================
         cursor.execute("""
-            SELECT scan_type_azka, warehouse_id_azka
+            SELECT scan_type_azka
             FROM tbl_driver_scans_azka
             WHERE driver_id_azka=%s
             ORDER BY scan_time_azka DESC
@@ -3980,17 +2610,14 @@ def scan_sopir_azka():
         if not shipments:
             raise Exception("Tidak ada shipment aktif")
 
-        updated_count = 0
-
-        # =============================
-        # FLOW STATUS
-        # =============================
         next_status_map = {
             'DRIVER_ASSIGNED': 'PICKUP',
             'PICKUP': 'ARRIVED_AT_ORIGIN_HUB',
             'ARRIVED_AT_ORIGIN_HUB': 'IN_TRANSIT',
             'IN_TRANSIT': 'TRANSIT_HUB',
         }
+
+        updated_count = 0
 
         for s in shipments:
 
@@ -3999,8 +2626,11 @@ def scan_sopir_azka():
 
             if not next_status:
                 continue
+            # =====================================
+            # 🔒 VALIDASI GUDANG SESUAI MAPPING
+            # =====================================
 
-            # =============================
+             # =============================
             # VALIDASI ORIGIN (SUPER PENTING)
             # =============================
             if current_status == 'DRIVER_ASSIGNED':
@@ -4013,9 +2643,8 @@ def scan_sopir_azka():
                         f"Shipment {s['tracking_number_azka']} bukan dari gudang ini"
                     )
 
+            # Driver dilepas saat TRANSIT_HUB
             new_driver = driver_id
-
-            # Driver dilepas saat sampai TRANSIT
             if next_status == 'TRANSIT_HUB':
                 new_driver = None
 
@@ -4081,6 +2710,7 @@ def scan_sopir_azka():
 
     except Exception as e:
         conn.rollback()
+        print("ERROR SCAN SOPIR:", e)
         return str(e), 400
 
     finally:
