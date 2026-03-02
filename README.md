@@ -167,7 +167,6 @@ Sistem memiliki validasi ketat agar status tidak bisa lompat.
 ```
 aplikasi-logistik/
 │
-├── app.py
 ├── templates/
 ├── static/
 │   ├── qr_paket/
